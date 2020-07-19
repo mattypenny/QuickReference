@@ -23,14 +23,7 @@ switch ($Day){ 'mon' {"Monday"} ; 'tue' {"Tuesday"} }
 Set-ADAccountPassword -Identity matt -NewPassword (ConvertTo-SecureString -AsPlainText "qwert@12345" -Force) -reset
 Set-ADAccountPassword -Identity matt -NewPassword $(Read-Host -Prompt "Enter password" -AsSecureString)  -reset
 
-Import-Module activedirectory
-New-PSDrive `
-    -Name Chelsea `
-    -PSProvider ActiveDirectory `
-    -Server "chelseafc.co.uk" `
-    -Credential (Get-Credential "matt") `
-    -Root "//Rootietoot/" `
-    -Scope Global
+
 
 
                          
